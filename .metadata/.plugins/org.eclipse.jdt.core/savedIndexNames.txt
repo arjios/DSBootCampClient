@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\ws-bootcampclient\.metadata\.plugins\org.eclipse.jdt.core
+2378721229.index
