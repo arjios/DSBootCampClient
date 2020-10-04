@@ -1,0 +1,5 @@
+package com.devsuperior.dsclient.resource;
+
+public class ClientResource {
+
+}

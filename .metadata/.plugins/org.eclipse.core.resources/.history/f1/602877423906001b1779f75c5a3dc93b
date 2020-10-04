@@ -1,0 +1,31 @@
+package com.devsuperior.dsclient.dto;
+
+import java.io.Serializable;
+import java.time.Instant;
+
+import com.devsuperior.dsclient.entities.Client;
+
+public class ClientDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	public Long id;
+	private String name;
+	private String cpf;
+	private Double income;
+	private Instant birthDate;
+	private Integer children;
+
+	
+	public ClientDTO() {
+	}
+	
+	public ClientDTO(Client entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+		this.cpf = entity.getCpf();
+		this.income = entity.getIncome();
+		this.birthDate = entity.getBirthDate();
+		this.children = entity.getChildren();
+	}
+
+}
