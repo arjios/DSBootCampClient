@@ -1,0 +1,8 @@
+package com.devsuperior.dsclient.repositories;
+
+
+
+@Repository
+public interface ClientRepository extends JpaRepository<>{
+
+}
