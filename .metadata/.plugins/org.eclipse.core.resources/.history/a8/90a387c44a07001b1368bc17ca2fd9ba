@@ -22,7 +22,7 @@ public class ResourceExceptionHandler {
 		
 		se.setTimestamp(Instant.now());
 		se.setStatus(HttpStatus.NOT_FOUND.value());
-		se.setError("Error: Resource not found");
+		se.setError("Resource not found");
 		se.setMessage(enfe.getMessage());
 		se.setPath(hsr.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(se);
@@ -35,7 +35,7 @@ public class ResourceExceptionHandler {
 		
 		se.setTimestamp(Instant.now());
 		se.setStatus(HttpStatus.BAD_REQUEST.value());
-		se.setError("Error: Database exception");
+		se.setError("Database exception");
 		se.setMessage(de.getMessage());
 		se.setPath(hsr.getRequestURI());
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(se);
