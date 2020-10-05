@@ -73,7 +73,7 @@ public class ClientService {
 			throw new ResourceNotFoundException("Error: Id not found: " + id);
 		}
 		catch(DataIntegrityViolationException dive) {
-			throw new DatabaseException("Error: Database integrity violation" );
+			throw new DatabaseException("Error: Database integrity violation" )
 		}
 		
 	}
