@@ -44,10 +44,12 @@ public class ClientResource {
 		return ResponseEntity.created(uri).body(dto);
 	}	
 
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<ClientDTO> updateClient(@PathVariable Long id, @RequestBody ClientDTO dto) {
-		dto = clientService.updateClient(id, dto);
-		return ResponseEntity.ok().body(dto);
+	@PutMapping
+	public ResponseEntity<ClientDTO> updateClient(@RequestBody ClientDTO dto) {
+		dto = clientService.updateClient(dto);
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+				.buildAndExpand(dto.getId()).toUri();		
+		return ResponseEntity.created(uri).body(dto);
 	}
 	
 }

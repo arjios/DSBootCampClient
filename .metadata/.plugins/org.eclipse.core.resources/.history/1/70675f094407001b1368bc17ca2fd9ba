@@ -49,17 +49,17 @@ public class ClientService {
 	@Transactional
 	public ClientDTO updateClient(Long id, ClientDTO dto) {
 		try {
-			Client entity = repository.getOne(id);
-			entity.setName(dto.getName());
-			entity.setCpf(dto.getCpf());
-			entity.setBirthDate(dto.getBirthDate());
-			entity.setIncome(dto.getIncome());
-			entity.setChildren(dto.getChildren());
-			entity = repository.save(entity);
-			return new ClientDTO(entity);
+		Client entity = repository.getOne(id);
+		entity.setName(dto.getName());
+		entity.setCpf(dto.getCpf());
+		entity.setBirthDate(dto.getBirthDate());
+		entity.setIncome(dto.getIncome());
+		entity.setChildren(dto.getChildren());
+		entity = repository.save(entity);
 		} catch(EntityNotFoundException enfe) {
-			throw new ResourceNotFoundException("Id not found: " + id);
+			throw new ResourceNotFoundException("Id not found: " + id)
 		}
+		return new ClientDTO(entity);
 }
 
 }

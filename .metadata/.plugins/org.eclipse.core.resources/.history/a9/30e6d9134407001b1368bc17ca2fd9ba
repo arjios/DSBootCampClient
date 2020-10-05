@@ -60,6 +60,7 @@ public class ClientService {
 		} catch(EntityNotFoundException enfe) {
 			throw new ResourceNotFoundException("Id not found: " + id);
 		}
+
 }
 
 }
