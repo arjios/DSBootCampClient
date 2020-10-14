@@ -60,22 +60,23 @@ public class ClientService {
 			entity.setChildren(dto.getChildren());
 			entity = repository.save(entity);
 			return new ClientDTO(entity);
-		} catch(EntityNotFoundException enfe) {
+		} 
+		catch (EntityNotFoundException enfe) {
 			throw new ResourceNotFoundException("Id not found: " + id);
 		}
-}
+	}
 
 	public void deleteClient(Long id) {
 		try {
 			repository.deleteById(id);
-		}
-		catch(EmptyResultDataAccessException erdae) {
+		} 
+		catch (EmptyResultDataAccessException erdae) {
 			throw new ResourceNotFoundException("Error: Id not found: " + id);
-		}
-		catch(DataIntegrityViolationException dive) {
+		} 
+		catch (DataIntegrityViolationException dive) {
 			throw new DatabaseException("Error: Database integrity violation");
 		}
-		
+
 	}
 
 }

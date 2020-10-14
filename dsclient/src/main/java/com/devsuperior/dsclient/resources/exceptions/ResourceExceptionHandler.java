@@ -17,7 +17,7 @@ import com.devsuperior.dsclient.services.exceptions.ResourceNotFoundException;
 public class ResourceExceptionHandler {
 	
 	@ExceptionHandler(ResourceNotFoundException.class)
-	private ResponseEntity<StandardError> entityNotFound(EntityNotFoundException enfe, HttpServletRequest hsr) {
+	private ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException rnfe, HttpServletRequest hsr) {
 		
 		StandardError se = new StandardError();
 		
@@ -42,4 +42,5 @@ public class ResourceExceptionHandler {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(se);
 	}
 
+	
 }
