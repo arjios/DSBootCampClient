@@ -1,1 +1,0 @@
-INSERT INTO tb_client (name, cpf, birthDate, income, children) VALUES ("Antonio", "88546136915", "", 10000.00, 2)

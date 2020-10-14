@@ -2,7 +2,6 @@ package com.devsuperior.dsclient.resources.exceptions;
 
 import java.time.Instant;
 
-import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
@@ -24,7 +23,7 @@ public class ResourceExceptionHandler {
 		se.setTimestamp(Instant.now());
 		se.setStatus(HttpStatus.NOT_FOUND.value());
 		se.setError("Error: Resource not found");
-		se.setMessage(enfe.getMessage());
+		se.setMessage(rnfe.getMessage());
 		se.setPath(hsr.getRequestURI());
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(se);
 	}
